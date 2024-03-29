@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root{
+    --mainColor:#B12028;
+}
+.logo{
+    margin: 0 40%;
+}
+
+.menuDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body, head{
+    font-family: "El Messiri" !important;
+    color: #1C1C1B !important;
+  }
+p {
+    margin: 0px !important;
+
+}
+.twoOnThreeCenterDiv {
+    position: absolute;
+    top: 300px;
+}
+
+.twoOnThreeCenterDivImg {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.oneOnThree {
+     height: 99vh;
+    /* Remove fixed height */
+}
+
+.twoOnThree {
+    height: 100vh;
+    border-right-style: double;
+}
+
+.menuBtn {
+    left: -10px;
+    position: relative;
+}
+
+.navbar-brand {
+    flex: 1;
+    display: flex;
+}
+.modalCalories{
+    unicode-bidi: plaintext;
+    background: var(--mainColor);
+    color: #fff;
+    font-size: x-small;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.onScreen{
+    background-color:var(--mainColor);
+    border-style: solid;
+    border-color: var(--mainColor);
+}
+.modalPrice{
+
+    background: var(--mainColor);
+    padding: 5px;
+    margin-top: 10px !important;
+    position: relative;
+    color: #fff;
+}
+.title {
+    color: var(--mainColor);
+    margin: 20px auto;
+    font-weight: 900;
+    font-size: larger;
+}
+
+.mmenu {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    transition: transform 0.3s ease;
+    position: sticky;
+    width: 95vw;
+    z-index: 1;
+    top: 0;
+    margin-left: -10px;
+    max-width: 455px;
+}
+
+.mmenu-item {
+    background-color: #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.mmenu-item:hover {
+    background-color: var(--mainColor);
+    border-style: solid;
+    border-color: var(--mainColor);
+}
+
+.mmenu-img {
+    width: 120px;
+    border-radius: 5px;
+    min-height: 90px;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.meal {
+    display: -webkit-inline-box;
+    margin: 0 auto;
+}
+
+.card-img {
+    margin: 5px 5px;
+    height: 100px;
+}
+
+.card-text {
+    overflow-y: auto;
+}
+
+.card-body {
+    padding: 0.5rem;
+    text-align: right;
+}
+
+.itemContainer {
+    position: relative;
+    top: 200px;
+    min-width: 350px;
+}
+
+.topM {
+    width: 100%;
+    max-width: 455px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background: #f7f7f7;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* For Firefox */
+.scrollbar {
+    scrollbar-width: thin;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--mainColor);
+}
+
+.calories {
+    font-weight: bold;
+    color: #c87878;
+    font-size: x-small;
+    padding-top: 7px;
+}
+
+#navbarNav {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.langSvg {
+    width: 25px;
+    display: list-item;
+}
+
+.nav-item {
+    background: var(--mainColor);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 1px;
+}
+
+.modalImg
+{
+    max-width: 450px;
+}
+.nav-link {
+    color: #fff
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    font-weight: 200;
+
+    &.modal-active {
+        overflow: hidden;
+    }
+}
+
+#modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 1;
+
+    &.one {
+        transform: scaleY(.01) scaleX(0);
+        animation: unfoldIn 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+        .modal-background {
+            .modal {
+                transform: scale(0);
+                animation: zoomIn .3s .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+            }
+        }
+
+        &.out {
+            transform: scale(1);
+            animation: unfoldOut .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+
+            .modal-background {
+                .modal {
+                    animation: zoomOut .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+                }
+            }
+        }
+    }
+
+    .modal-background {
+        display: table-cell;
+        background: rgba(0, 0, 0, .8);
+        text-align: center;
+        vertical-align: middle;
+
+        .modal {
+            background: white;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 3px;
+            font-weight: 300;
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            height: max-content;
+
+            h2 {
+                font-size: 25px;
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+
+            .modal-svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-radius: 3px;
+
+                rect {
+                    stroke: #fff;
+                    stroke-width: 2px;
+                    stroke-dasharray: 778;
+                    stroke-dashoffset: 778;
+                }
+            }
+            .price{
+                border-style: solid;
+                width: 20%;
+            }
+        }
+    }
+}
+
+@keyframes unfoldIn {
+    0% {
+        transform: scaleY(.005) scaleX(0);
+    }
+
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+@keyframes unfoldOut {
+    0% {
+        transform: scaleY(1) scaleX(1);
+    }
+
+    50% {
+        transform: scaleY(.005) scaleX(1);
+    }
+
+    100% {
+        transform: scaleY(.005) scaleX(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, .0);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, .7);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background: rgba(0, 0, 0, .7);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, .0);
+    }
+}
+
+.nav-lang {
+    margin: 19px 30px;
+    color: var(--mainColor);
+}
+
+.description {
+    overflow: hidden;
+    color: rgb(87, 89, 98) !important;
+}
+
+.modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 1;
+}
+
+.modal-container.one {
+    transform: scaleY(.01) scaleX(0);
+    animation: unfoldIn 0.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.modal-container.out {
+    transform: scale(1);
+    animation: unfoldOut .5s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+
+.modal-background {
+    display: table-cell;
+    background: rgba(0, 0, 0, .8);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modal {
+    background: white;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 3px;
+    font-weight: 300;
+    position: relative;
+    width: 90%;
+    height: 60%;
+}

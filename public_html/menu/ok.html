@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <title>Redston Restaurant</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Rubik" !important;
+        }
+        .twoOnThreeCenterDiv {
+            position: absolute;
+            top: 300px;
+        }
+
+        .twoOnThreeCenterDivImg {
+            width: 200px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .oneOnThree {
+            /* height: 100vh; */
+            /* Remove fixed height */
+        }
+
+        .twoOnThree {
+            height: 100vh;
+            border-right-style: double;
+        }
+
+        .menuBtn {}
+
+        .navbar-brand {
+            margin-right: 2px;
+        }
+
+        .title {
+            color: brown;
+            margin: 20px auto;
+        }
+
+        .mmenu {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 20px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            transition: transform 0.3s ease;
+            position: sticky;
+            width: 95vw;
+            z-index: 1;
+            top: 0;
+        }
+
+        .mmenu-item {
+            padding: 2px;
+            background-color: #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .mmenu-item:hover {
+            background-color: #ccc;
+        }
+
+        .mmenu-img {
+            width: 120px;
+            border-radius: 5px;
+        }
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .meal {
+            display: -webkit-inline-box;
+            margin: 0 auto;
+        }
+
+        .card-img {
+            margin: 5px 5px;
+            height: 100px;
+        }
+
+        .card-text {
+            height: 70px;
+            overflow-y: auto;
+        }
+        .card-body{
+            padding: 0.7rem;
+        }
+
+        .itemContainer {
+            position: relative;
+            top: 200px;
+            min-width: 350px;
+        }
+
+        .topM {
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            background: #f7f7f7;
+        }
+        ::-webkit-scrollbar {
+            width: 2px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #ffffff00;
+        }
+
+        /* For Firefox */
+        .scrollbar {
+            scrollbar-width: thin;
+        }
+        .scrollbar-thumb {
+            background-color: #ffffff00;
+        }
+        .price{
+            font-weight: bold;
+            color: red;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 d-none d-md-block twoOnThree">
+                <!-- This column will be visible on medium and larger screens -->
+                <div class="twoOnThreeCenterDiv">
+                    <h2>Redston Restaurant</h2>
+                    <hr>
+                    <img class="twoOnThreeCenterDivImg" src="https://redston.gulfstar.com.sa/assets/images/logo.png"
+                        alt="Centered Image" style="width: 200px;">
+                </div>
+            </div>
+            <div class="col-12 col-md-5 oneOnThree">
+                <div class="topM">
+                    <div class="menuDiv d-flex">
+                        <!-- Menu toggle button for small screens -->
+                        <button class="d-none menuBtn navbar-toggler  float-left" type="button" data-toggle="collapse"
+                            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                aria-hidden="true" class="w-6 h-6 text-background_color" height="1em" width="1em"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img class="logo" src="https://redston.gulfstar.com.sa/assets/images/logo.png" alt="Logo"
+                                height="55">
+                        </a>
+                        <b class="title">Redston Restaurant</b>
+                    </div>
+
+
+                    <!-- Menu items -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">مشويات</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">فطور</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">شوربة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">عصيرات</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mmenu">
+                        <div class="mmenu-item">
+                            <img class="mmenu-img"
+                                src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                                alt="الفطور">
+                            <br><span>الفطور</span>
+                        </div>
+                        <div class="mmenu-item">
+                            <img class="mmenu-img"
+                                src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                                alt="الفطور">
+                            <br><span>الفطور</span>
+                        </div>
+                        <div class="mmenu-item">
+                            <img class="mmenu-img"
+                                src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                                alt="الفطور">
+                            <br><span>الفطور</span>
+                        </div>
+                        <div class="mmenu-item">
+                            <img class="mmenu-img"
+                                src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                                alt="الفطور">
+                            <br><span>الفطور</span>
+                        </div>
+                        <!-- Add more menu items as needed -->
+                    </div>
+                </div>
+                <div class="itemContainer">
+                    <div id="items">
+                        <div class="cat">
+                            <div class="catImg">
+                                <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8=" class="card-img-top rounded" alt="">
+                            </div>
+                            <h4 class="catName text-center my-2">
+                                المقبلات
+                            </h4>
+                        </div>
+                    <div class="card m-2 shadow-lg"> <!-- Add shadow-lg class for a large shadow -->
+                        <div class="row no-gutters">
+                            <div class="col-4">
+                                <img src="https://media.finedinemenu.com/filters:strip_exif()/filters:format(webp)/1000x747/DoPSO8I2d/794a2161-461f-434e-bea2-4b6f441cd3be.tiff"
+                                    class="card-img rounded" alt="...">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <hr>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
+                                    <p class="price">55 sar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <p class="price">99 sar</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card m-2 shadow"> <!-- Add shadow-sm class for a small shadow -->
+                        <img src="https://media.istockphoto.com/id/1191425335/photo/american-food-concept-grilled-pork-ribs-with-grilled-sauce-with-smoke-spices-and-rosemary.jpg?s=612x612&w=0&k=20&c=TXvrzSQ7JndB40X8BzNyInU0e78p5pdg0qFxsxZ5e_8="
+                            class="card-img-top rounded" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="footer">
+                        <div class="footerBottom py-2"><div class="container d-flex align-items-center justify-content-between"><span>جميع الحقوق محفوظة ©</span> <small>Powered by <a href="https://redston.com.sa" title="Order" target="_blank">Redston</a></small></div></div>
+                    </div>      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Set height of .oneOnThree div to screen height in pixels
+        window.onload = function () {
+            var screenHeight = window.innerHeight;
+            document.querySelector('.oneOnThree').style.height = screenHeight + 'px';
+        };
+    </script>
+</body>
+
+</html>
